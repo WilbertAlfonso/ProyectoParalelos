@@ -10,7 +10,11 @@
 #include "RSA.h"
 int main()
 {
-	RSA X;
+	    RSA a(1024);
+	
+	/*
+	agregar metodos encriptar y desencriptar
+	*/
 	system("Pause");
 	return 0;
 }
