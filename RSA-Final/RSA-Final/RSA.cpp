@@ -19,7 +19,19 @@ RSA::RSA(int bits)
 
         d=InvMod(e,on);
     }
-
+ZZ  RSA::Encriptar(string msj)
+{
+	ZZ j;
+	j = datos.find(msj);
+	j = PowerMod(j, e, n);
+	return j;
+}
+char RSA::Desencriptar(ZZ j)
+{
+	ZZ r = PowerMod(j, d, n);
+	int s = to_int(r);
+	return datos[s];
+}
 RSA::~RSA()
 {
 }

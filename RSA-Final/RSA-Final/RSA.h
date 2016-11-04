@@ -6,12 +6,13 @@
 #include<algorithm>
 #include <sstream>      // std::stringstream
 #include<fstream>
+#include "aritmetica.h"
 using namespace NTL;
 using namespace std;
 class RSA
 {
 public:
-	string alfabeto;
+	string datos;
 	ZZ p;
 	ZZ q;
 	ZZ n;
@@ -21,7 +22,6 @@ public:
 	aritmetica Funciones; //Aqui pondremos todas las funciones que hagamos en paralelo y algunos algortimos.
 	
 	/**
-	Author: luis
 	Constructor rsa
 	int bits: es el numero de bits que tendra cada numero generado
 	datos: es el abecedario de caracteres 
@@ -31,7 +31,14 @@ public:
 	ZZ getLlavePublica(){
 		return e;
 	}
-	string Encriptar(string datos);
-	string Desencriptar(string datos);
+	/**
+	Metodos de Encriptar y Desencriptar
+	msj: Se refiere al mensaje a encriptar
+	j: Es el mensaje ya encriptado que se representara como un ZZ
+	Nota: En esta fase solo usamos algunos metodos de la libreria para probar la 
+	consistencia del metodo criptografico, solo encriptamos una letra por ahora.
+	*/
+	ZZ Encriptar(string msj);
+	char Desencriptar(ZZ j);
 };
 

@@ -160,6 +160,7 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <CudaCompile Include="aritmetica.cu" />
     <CudaCompile Include="kernel.cu" />
   </ItemGroup>
   <ItemGroup>
@@ -167,7 +168,6 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     <ClInclude Include="RSA.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="aritmetica.cpp" />
     <ClCompile Include="RSA.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
