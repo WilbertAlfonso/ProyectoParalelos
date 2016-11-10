@@ -4,7 +4,12 @@
 #include <iostream>
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
+#include<time.h>
+#include <NTL/ZZ.h>
+
+using namespace NTL;
 using namespace std;
+
 class aritmetica
 {
 public:
@@ -15,4 +20,7 @@ public:
 	tam: tamaño del vector data, por razones de formula el vector debera ser de un tamaño que cumpla que sea un 2^n.
 	*/
 	double* four(double* data, double n, int tam);
+	ZZ Blum(long n);
+	ZZ aleatorioBits(long long i);
+	ZZ generaPrimo(long long bits);
 };
