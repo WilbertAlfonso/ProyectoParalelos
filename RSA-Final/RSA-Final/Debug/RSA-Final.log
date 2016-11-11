@@ -1,4 +1,4 @@
-﻿Compilación iniciada a las 03/11/2016 10:48:27 p.m..
+﻿Compilación iniciada a las 11/11/2016 12:34:50 a.m..
      1>Proyecto "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\RSA-Final.vcxproj" en el nodo 2 (Build destinos).
      1>AddCudaCompileDeps:
          D:\Visual Studio\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /D_DEBUG /D_CONSOLE /D_MBCS /ID:\Paralelos\Final\WinNTL-10_1_0\include /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /I. /FIcuda_runtime.h /c D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\aritmetica.cu 
@@ -7,13 +7,15 @@
      1>El proyecto "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\RSA-Final.vcxproj" (1) está compilando "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\RSA-Final.vcxproj" (1:2) en el nodo 2 (CudaBuildCore destinos).
      1>CudaBuildCore:
          Compiling CUDA source file aritmetica.cu...
-         cmd.exe /C "C:\Users\User\AppData\Local\Temp\tmpbb15a377ee6f4af2a67f99ccec9b7dcb.cmd"
+         cmd.exe /C "C:\Users\User\AppData\Local\Temp\tmp8e4f971ace864a05a597ac7b576c75a4.cmd"
          "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\Visual Studio\VC\bin"  -I"D:\Paralelos\Final\WinNTL-10_1_0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o Debug\aritmetica.cu.obj "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\aritmetica.cu"
          
          D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\Visual Studio\VC\bin"  -I"D:\Paralelos\Final\WinNTL-10_1_0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o Debug\aritmetica.cu.obj "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\aritmetica.cu" 
      1>CUDACOMPILE : nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
          aritmetica.cu
-     1>D:/Paralelos/Final/Git/ProyectoParalelos/RSA-Final/RSA-Final/aritmetica.cu(20): warning C4244: 'argumento' : conversión de 'double' a 'unsigned int'; posible pérdida de datos
+     1>D:/Paralelos/Final/Git/ProyectoParalelos/RSA-Final/RSA-Final/aritmetica.cu(21): warning C4244: 'argumento' : conversión de 'double' a 'unsigned int'; posible pérdida de datos
+     1>D:/Paralelos/Final/Git/ProyectoParalelos/RSA-Final/RSA-Final/aritmetica.cu(64): warning C4244: 'argumento' : conversión de 'double' a 'unsigned int'; posible pérdida de datos
+     1>D:/Paralelos/Final/Git/ProyectoParalelos/RSA-Final/RSA-Final/aritmetica.cu(185): warning C4244: 'argumento' : conversión de '__int64' a 'long'; posible pérdida de datos
      1>Compilación del proyecto terminada "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\RSA-Final.vcxproj" (CudaBuildCore destinos).
      1>ClCompile:
          D:\Visual Studio\VC\bin\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSA.cpp
@@ -36,4 +38,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:04.08
+Tiempo transcurrido 00:00:04.14

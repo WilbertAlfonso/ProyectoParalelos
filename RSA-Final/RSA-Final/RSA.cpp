@@ -7,18 +7,18 @@ RSA::RSA(int bits)
 
         do
         {
-             // p=GenPrime_ZZ(bits);
-			p=Funciones.generaPrimo(bits);
-            //q=GenPrime_ZZ(bits);
-			q=Funciones.generaPrimo(bits);
+            p=GenPrime_ZZ(bits);
+			//p=Funciones.generaPrimo(bits);
+            q=GenPrime_ZZ(bits);
+			//q=Funciones.generaPrimo(bits);
         }
         while(p==q);
 
         n=p*q;
         on=(p-1)*(q-1);
 
-		e=Funciones.generaPrimo(bits);
-	  // e=GenPrime_ZZ(bits);
+		//e=Funciones.generaPrimo(bits);
+	   e=GenPrime_ZZ(bits);
 
         d=InvMod(e,on);
     }
@@ -33,6 +33,7 @@ char RSA::Desencriptar(ZZ j)
 {
 	ZZ r = PowerMod(j, d, n);
 	int s = to_int(r);
+	cout << s<<endl;
 	return datos[s];
 }
 RSA::~RSA()
