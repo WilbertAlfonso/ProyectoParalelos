@@ -160,8 +160,8 @@ ZZ aritmetica::Blum(long n)
 {
     ZZ N,semilla, p, q, bits,x, res, temp;
 
-    p = to_ZZ("346176527");
-    q =to_ZZ("7171153257");
+    p = 7171153257;
+    q =5;
 
     N = p * q;
     clock_t t;
@@ -189,11 +189,22 @@ ZZ aritmetica::aleatorioBits(long long i)
     else
         return d;
 }
-ZZ aritmetica::generaPrimo(long long bits)
+/*ZZ aritmetica::generaPrimo(long long bits)
 {
     ZZ n =aleatorioBits(bits);
     while(MillerWitness((n),to_ZZ(80))==0)
         n=aleatorioBits(bits);
+    return n;
+}*/
+ZZ aritmetica::generaPrimo(long long bits)
+{
+    ZZ n;
+   
+   do {
+        n=aleatorioBits(bits);
+        //cout<<n<<endl<<endl;
+        //cout<<ProbPrime(n)<<endl<<endl;
+    } while(ProbPrime(n)==0);
     return n;
 }
 

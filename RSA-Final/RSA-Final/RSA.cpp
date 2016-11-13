@@ -7,10 +7,10 @@ RSA::RSA(int bits)
 
         do
         {
-            p=GenPrime_ZZ(bits);
-			//p=Funciones.generaPrimo(bits);
-            q=GenPrime_ZZ(bits);
-			//q=Funciones.generaPrimo(bits);
+            //p=GenPrime_ZZ(bits);
+			p=Funciones.generaPrimo(bits);
+            //q=GenPrime_ZZ(bits);
+			q=Funciones.generaPrimo(bits);
         }
         while(p==q);
 
@@ -18,7 +18,12 @@ RSA::RSA(int bits)
         on=(p-1)*(q-1);
 
 		//e=Funciones.generaPrimo(bits);
-	   e=GenPrime_ZZ(bits);
+	   //e=GenPrime_ZZ(bits); 
+	do{
+            e=Funciones.aleatorioBits(1024);
+        }
+        while((GCD(e,on))!=1);
+
 
         d=InvMod(e,on);
     }
