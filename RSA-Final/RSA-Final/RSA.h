@@ -50,7 +50,7 @@ public:
 	string  tratarMensaje(string msj);
 	string cifrarMensaje(string datos);
 	string descifrarMensaje(string datos);
-
+    void proc_paralell(long &,ZZ &,string&,string&);
 
 
 };

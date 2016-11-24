@@ -109,7 +109,25 @@ string  RSA::tratarMensaje(string msj)
     }
     return total;
 }
+void RSA::proc_paralell(long &i,ZZ & val,string&d,string&total)
+{
+        string t=d.substr(i,to_long(val));
+        ZZ temp(INIT_VAL, t.c_str());
+        cout<<"t vale "<<temp<<endl;
 
+        t=convert(PowerMod(temp,e,n));
+        cout<<"mi t vale "<<t<<endl;
+        if(t.size()<lenNumber(n))
+        {
+            total+=ceros((t));
+            cout<<ceros(t)<<endl;
+        }
+        else
+        {
+            total+=t;
+            cout<<t<<endl;
+        }
+}
 string RSA::cifrarMensaje(string datos)
 {
     string d=tratarMensaje(datos);
@@ -122,20 +140,15 @@ string RSA::cifrarMensaje(string datos)
     if((to_ZZ(d.length())%val)!=0)
         d=cerosFin(d,val);
 
-    for(long i=0; i<to_long(d.length()); i+=to_long(val))
+    for(long i=0,j=1; i<to_long(d.length()); i+=to_long(val))
     {
-        string t=d.substr(i,to_long(val));
-        ZZ temp(INIT_VAL, t.c_str());
-
-        t=convert(PowerMod(temp,e,n));
-        if(t.size()<lenNumber(n))
+        if(j<std::thread::hardware_concurrency())
         {
-            total+=ceros((t));
+            async(launch::async,&RSA::proc_paralell,this,ref(i),ref(val),ref(d),ref(total)).get();j++;
         }
         else
         {
-            total+=t;
-            //cout<<t<<endl;
+            proc_paralell(i,val,d,total);j--;
         }
     }
     return total;
