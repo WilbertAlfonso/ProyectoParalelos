@@ -41,14 +41,15 @@ public:
     ZZ Encriptar(string msj);
     char Desencriptar(ZZ j);
     template <class T>
-    string convert(T num,bool val=1)
-    ZZ convert(string Text)
-    string ceros(string t,ZZ number)
-    string cerosFin(string t,ZZ number)
-    string ceros(string t)
-    ZZ lenNumber(ZZ dat)
-    string  tratarMensaje(string msj)
-    string cifrarMensaje(string datos)
+	string convert(T num, bool val = 1);
+	ZZ convertS(string Text);
+	string ceros(string t, ZZ number);
+	string cerosFin(string t, ZZ number);
+	string ceros(string t);
+	ZZ lenNumber(ZZ dat);
+	string  tratarMensaje(string msj);
+	string cifrarMensaje(string datos);
+	string descifrarMensaje(string datos);
 
 
 

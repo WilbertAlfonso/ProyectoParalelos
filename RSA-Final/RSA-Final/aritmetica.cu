@@ -160,8 +160,8 @@ ZZ aritmetica::Blum(long n)
 {
     ZZ N,semilla, p, q, bits,x, res, temp;
 
-    p = 7171153257;
-    q =5;
+    p = to_ZZ("7171153257");
+    q =to_ZZ("5");
 
     N = p * q;
     clock_t t;

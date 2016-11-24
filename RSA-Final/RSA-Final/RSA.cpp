@@ -42,13 +42,13 @@ char RSA::Desencriptar(ZZ j)
     return datos[s];
 }
 template <class T>
-string RSA::convert(T num,bool val=1)
+string RSA::convert(T num,bool val)
 {
     stringstream convert;
     convert<<num;
     return convert.str();
 }
-ZZ RSA::convert(string Text)
+ZZ RSA::convertS(string Text)
 {
     stringstream convert(Text);
     ZZ num;
@@ -95,7 +95,7 @@ string  RSA::tratarMensaje(string msj)
     for(int i=0; i<msj.size(); i++)
     {
         int dat= datos.find(msj[i]);
-        cout<<"mi dat "<<dat<<endl;
+        //cout<<"mi dat "<<dat<<endl;
         string aux;
         aux=convert<int>(dat);
 
@@ -104,7 +104,7 @@ string  RSA::tratarMensaje(string msj)
             aux="0"+aux;
             cout<<aux<<endl;
         }
-        cout<<"aux: "<<aux<<endl;
+        //cout<<"aux: "<<aux<<endl;
         total+=aux;
     }
     return total;
@@ -135,12 +135,74 @@ string RSA::cifrarMensaje(string datos)
         else
         {
             total+=t;
-            cout<<t<<endl;
+            //cout<<t<<endl;
         }
     }
     return total;
 }
+string Postceros(string t, ZZ number)
+{
+	while ((to_ZZ(t.size()))<(number))
+	{
+		t = "0" + t;
+		//    cout<<"CENTRO DE CDEROS "<<t<<endl;
+	}
+	//cout<<"t resultante "<<t<<endl;
+	return t;
+}
+string RSA::descifrarMensaje(string datos)
+{
+	ZZ val = lenNumber(n);
+	//cout << "VAL DESCIFRAR " << val << endl;
+	string total, t;
+	ZZ aux;
 
+	for (long i = 0; i<to_long(datos.length()); i += to_long(val))
+	{
+		string t = datos.substr(i, to_long(val));
+		ZZ temp(INIT_VAL, t.c_str());
+		//cout << "t vale " << temp << endl;
+
+		aux = (Funciones.powM(temp, d, n));
+		//cout << "lennumber " << (lenNumber(aux)<val) << endl;
+		//cout << "AUX DENTRO DE DECIFRAR " << aux << endl;
+		if (lenNumber(aux)<val)
+		{
+			//cout << "entre " << endl;
+			t = Postceros(convert(aux), val - 1);
+		}
+		//cout << "t despues  vale " << t << endl;
+
+		total += t;
+	}
+
+	//cout << "totaol que va a entrar " << total << endl;
+	val--;
+	for (long i = 0; i<to_long(total.length()); i += to_long(val))
+	{
+		string t = datos.substr(i, to_long(val));
+
+		if (t.size()<val)
+		{
+			//cout << "entre " << endl;
+			t = Postceros(t, val - 1);
+		}
+		//cout << "t para ultima " << t << endl;
+
+
+	}
+
+	//cout << "mi t total  vale " << total << endl;
+
+	//cout << (to_ZZ(total.length()) % val) << endl;
+	string res;
+	for (int i = 0; i<total.size(); i += to_int(lenNumber(to_ZZ(this->datos.size() - 1))))
+	{
+		int dat = to_int(convertS(total.substr(i, to_int(lenNumber(to_ZZ(this->datos.size() - 1))))));
+		res += this->datos[dat];
+	}
+	return res;
+}
 
 
 

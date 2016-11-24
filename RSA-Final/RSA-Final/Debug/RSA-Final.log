@@ -1,27 +1,18 @@
-﻿Compilación iniciada a las 11/11/2016 12:34:50 a.m..
+﻿Compilación iniciada a las 23/11/2016 11:22:35 p.m..
      1>Proyecto "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\RSA-Final.vcxproj" en el nodo 2 (Build destinos).
      1>AddCudaCompileDeps:
-         D:\Visual Studio\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /D_DEBUG /D_CONSOLE /D_MBCS /ID:\Paralelos\Final\WinNTL-10_1_0\include /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /I. /FIcuda_runtime.h /c D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\aritmetica.cu 
-       AddCudaCompileDeps:
          D:\Visual Studio\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /D_DEBUG /D_CONSOLE /D_MBCS /ID:\Paralelos\Final\WinNTL-10_1_0\include /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /I. /FIcuda_runtime.h /c D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\kernel.cu 
-     1>El proyecto "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\RSA-Final.vcxproj" (1) está compilando "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\RSA-Final.vcxproj" (1:2) en el nodo 2 (CudaBuildCore destinos).
+     1>El proyecto "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\RSA-Final.vcxproj" (1) está compilando "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\RSA-Final.vcxproj" (1:3) en el nodo 1 (CudaBuildCore destinos).
      1>CudaBuildCore:
-         Compiling CUDA source file aritmetica.cu...
-         cmd.exe /C "C:\Users\User\AppData\Local\Temp\tmp8e4f971ace864a05a597ac7b576c75a4.cmd"
-         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\Visual Studio\VC\bin"  -I"D:\Paralelos\Final\WinNTL-10_1_0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o Debug\aritmetica.cu.obj "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\aritmetica.cu"
+         Compiling CUDA source file kernel.cu...
+         cmd.exe /C "C:\Users\User\AppData\Local\Temp\tmp35307a086af246eeb1ab08f0d5b5168c.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\Visual Studio\VC\bin"  -I"D:\Paralelos\Final\WinNTL-10_1_0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o Debug\kernel.cu.obj "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\kernel.cu"
          
-         D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\Visual Studio\VC\bin"  -I"D:\Paralelos\Final\WinNTL-10_1_0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o Debug\aritmetica.cu.obj "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\aritmetica.cu" 
+         D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\Visual Studio\VC\bin"  -I"D:\Paralelos\Final\WinNTL-10_1_0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o Debug\kernel.cu.obj "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\kernel.cu" 
      1>CUDACOMPILE : nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
-         aritmetica.cu
-     1>D:/Paralelos/Final/Git/ProyectoParalelos/RSA-Final/RSA-Final/aritmetica.cu(21): warning C4244: 'argumento' : conversión de 'double' a 'unsigned int'; posible pérdida de datos
-     1>D:/Paralelos/Final/Git/ProyectoParalelos/RSA-Final/RSA-Final/aritmetica.cu(64): warning C4244: 'argumento' : conversión de 'double' a 'unsigned int'; posible pérdida de datos
-     1>D:/Paralelos/Final/Git/ProyectoParalelos/RSA-Final/RSA-Final/aritmetica.cu(185): warning C4244: 'argumento' : conversión de '__int64' a 'long'; posible pérdida de datos
+         kernel.cu
      1>Compilación del proyecto terminada "D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\RSA-Final\RSA-Final.vcxproj" (CudaBuildCore destinos).
-     1>ClCompile:
-         D:\Visual Studio\VC\bin\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RSA.cpp
-         RSA.cpp
-     1>d:\paralelos\final\winntl-10_1_0\include\ntl\sp_arith.h(332): warning C4554: '<<' : compruebe la prioridad de operador para posibles errores; utilice paréntesis para indicar la prioridad
-       Link:
+     1>Link:
          D:\Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\Debug\RSA-Final.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Paralelos\Final\WinNTL-10_1_0\src\Debug" /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\lib\Win32" cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib NTL.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\Debug\RSA-Final.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Paralelos\Final\Git\ProyectoParalelos\RSA-Final\Debug\RSA-Final.lib" /MACHINE:X86 Debug\aritmetica.cu.obj
          Debug\kernel.cu.obj
          Debug\RSA.obj
@@ -38,4 +29,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:04.14
+Tiempo transcurrido 00:00:04.68

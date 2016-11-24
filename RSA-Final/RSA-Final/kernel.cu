@@ -11,9 +11,9 @@
 int main()
 {
 	    RSA a(1024);
-		ZZ MensajeE=a.Encriptar("c");
-		cout << MensajeE << endl;
-		cout << a.Desencriptar(MensajeE);
+		string s = a.cifrarMensaje("Mi mama Me Mi r 0876543");
+		cout << "Mensaje Encriptado: " << s;
+		cout << a.descifrarMensaje(s) << endl;
 	
 	/*
 	agregar metodos encriptar y desencriptar
