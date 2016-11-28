@@ -4,25 +4,24 @@
 RSA::RSA(int bits)
 {
     datos=" abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
+	NumbitsRSA = bits;
     do
     {
-        //p=GenPrime_ZZ(bits);
-        p=Funciones.generaPrimo(bits);
-        //q=GenPrime_ZZ(bits);
-        q=Funciones.generaPrimo(bits);
+        p=GenPrime_ZZ(bits);
+        //p=Funciones.generaPrimo(bits);
+        q=GenPrime_ZZ(bits);
+        //q=Funciones.generaPrimo(bits);
     }
     while(p==q);
 
     n=p*q;
     on=(p-1)*(q-1);
-
     //e=Funciones.generaPrimo(bits);
-    //e=GenPrime_ZZ(bits);
-    do {
-        e=Funciones.aleatorioBits(1024);
+    e=GenPrime_ZZ(bits);
+    /*do {
+        e=Funciones.aleatorioBits(bits);
     }
-    while((GCD(e,on))!=1);
+    while((GCD(e,on))!=1);*/
 
 
     d=InvMod(e,on);
@@ -142,7 +141,7 @@ string RSA::cifrarMensaje(string datos)
 
     for(long i=0,j=1; i<to_long(d.length()); i+=to_long(val))
     {
-        if(j<std::thread::hardware_concurrency())
+        if(j<thread::hardware_concurrency())
         {
             async(launch::async,&RSA::proc_paralell,this,ref(i),ref(val),ref(d),ref(total)).get();j++;
         }
@@ -163,33 +162,34 @@ string Postceros(string t, ZZ number)
 	//cout<<"t resultante "<<t<<endl;
 	return t;
 }
+void RSA::dec_paralell(long &i, ZZ & val, string&total, string&datos)
+{
+	string t = datos.substr(i, to_long(val));
+	ZZ temp(INIT_VAL, t.c_str());
+	ZZ aux = PowerMod(temp, d, n);
+	if (lenNumber(aux)<val)
+	{
+		t = Postceros(convert(aux), val - 1);
+	}
+	total += t;
+}
 string RSA::descifrarMensaje(string datos)
 {
 	ZZ val = lenNumber(n);
-	//cout << "VAL DESCIFRAR " << val << endl;
 	string total, t;
 	ZZ aux;
 
-	for (long i = 0; i<to_long(datos.length()); i += to_long(val))
+	for (long i = 0, j = 1; i<to_long(datos.length()); i += to_long(val))
 	{
-		string t = datos.substr(i, to_long(val));
-		ZZ temp(INIT_VAL, t.c_str());
-		//cout << "t vale " << temp << endl;
-
-		aux = (Funciones.powM(temp, d, n));
-		//cout << "lennumber " << (lenNumber(aux)<val) << endl;
-		//cout << "AUX DENTRO DE DECIFRAR " << aux << endl;
-		if (lenNumber(aux)<val)
+		if (j<std::thread::hardware_concurrency())
 		{
-			//cout << "entre " << endl;
-			t = Postceros(convert(aux), val - 1);
+			async(launch::async, &RSA::dec_paralell, this, ref(i), ref(val), ref(total), ref(datos)).get(); j++;
 		}
-		//cout << "t despues  vale " << t << endl;
-
-		total += t;
+		else
+		{
+			dec_paralell(i, val, total, datos); j--;
+		}
 	}
-
-	//cout << "totaol que va a entrar " << total << endl;
 	val--;
 	for (long i = 0; i<to_long(total.length()); i += to_long(val))
 	{
@@ -197,17 +197,12 @@ string RSA::descifrarMensaje(string datos)
 
 		if (t.size()<val)
 		{
-			//cout << "entre " << endl;
 			t = Postceros(t, val - 1);
 		}
-		//cout << "t para ultima " << t << endl;
 
 
 	}
 
-	//cout << "mi t total  vale " << total << endl;
-
-	//cout << (to_ZZ(total.length()) % val) << endl;
 	string res;
 	for (int i = 0; i<total.size(); i += to_int(lenNumber(to_ZZ(this->datos.size() - 1))))
 	{
@@ -216,9 +211,6 @@ string RSA::descifrarMensaje(string datos)
 	}
 	return res;
 }
-
-
-
 RSA::~RSA()
 {
 }

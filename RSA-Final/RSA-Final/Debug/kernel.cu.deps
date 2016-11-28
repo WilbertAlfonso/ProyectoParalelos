@@ -598,8 +598,54 @@ D:\Paralelos\Final\WinNTL-10_1_0\include\NTL/vector.h
 D:\Paralelos\Final\WinNTL-10_1_0\include\NTL/SmartPtr.h
 D:\Paralelos\Final\WinNTL-10_1_0\include\NTL/thread.h
 D:\Paralelos\Final\WinNTL-10_1_0\include\NTL/sp_arith.h
-D:\Visual Studio\VC\include\vector
+D:\Visual Studio\VC\include\thread
+D:\Visual Studio\VC\include\functional
+D:\Visual Studio\VC\include\xfunctional
+D:\Visual Studio\VC\include\tuple
+D:\Visual Studio\VC\include\chrono
+D:\Visual Studio\VC\include\ratio
+D:\Visual Studio\VC\include\stdint.h
+D:\Visual Studio\VC\include\crtdefs.h
+D:\Visual Studio\VC\include\thr/xtimec.h
+D:\Visual Studio\VC\include\thr/xthrcommon.h
+D:\Visual Studio\VC\include\concrt.h
+D:\Visual Studio\VC\include\crtdefs.h
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\guiddef.h
+D:\Visual Studio\VC\include\thr/xthread
+D:\Visual Studio\VC\include\thr/xtime
+D:\Visual Studio\VC\include\thr/xthreads.h
+D:\Visual Studio\VC\include\future
+D:\Visual Studio\VC\include\mutex
+D:\Visual Studio\VC\include\condition_variable
+D:\Visual Studio\VC\include\ppltasks.h
+D:\Visual Studio\VC\include\pplconcrt.h
+D:\Visual Studio\VC\include\pplinterface.h
+D:\Visual Studio\VC\include\memory
+D:\Visual Studio\VC\include\atomic
+D:\Visual Studio\VC\include\assert.h
+D:\Visual Studio\VC\include\crtdefs.h
+D:\Visual Studio\VC\include\xatomic.h
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\xxatomic
+D:\Visual Studio\VC\include\pplcancellation_token.h
+D:\Visual Studio\VC\include\ppl.h
+D:\Visual Studio\VC\include\crtdefs.h
 D:\Visual Studio\VC\include\algorithm
+D:\Visual Studio\VC\include\vector
 D:\Visual Studio\VC\include\sstream
 d:\paralelos\final\git\proyectoparalelos\rsa-final\rsa-final\aritmetica.h
 D:\Visual Studio\VC\include\math.h

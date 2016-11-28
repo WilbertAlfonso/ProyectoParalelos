@@ -2,6 +2,8 @@
 #include<string>
 #include<iostream>
 #include <NTL/ZZ.h>
+#include <thread>
+#include <future>
 #include<vector>
 #include<algorithm>
 #include <sstream>      // std::stringstream
@@ -13,6 +15,7 @@ class RSA
 {
 public:
     string datos;
+	int NumbitsRSA;
     ZZ p;
     ZZ q;
     ZZ n;
@@ -51,7 +54,7 @@ public:
 	string cifrarMensaje(string datos);
 	string descifrarMensaje(string datos);
     void proc_paralell(long &,ZZ &,string&,string&);
-
+	void dec_paralell(long&, ZZ&, string&, string&);
 
 };
 

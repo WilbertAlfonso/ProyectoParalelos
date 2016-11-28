@@ -6,7 +6,8 @@
 #include "device_launch_parameters.h"
 #include<time.h>
 #include <NTL/ZZ.h>
-
+#include <sstream> 
+#define M_PI 3.14159265358979323846
 using namespace NTL;
 using namespace std;
 
@@ -22,8 +23,11 @@ public:
 	ZZ Blum(long n);
 	ZZ aleatorioBits(long long i);
 	ZZ generaPrimo(long long bits);
-	ZZ powM(ZZ a, ZZ m, ZZ modulo);
-	double* four(double* data, double n, int tam);
-	double* fourI(double* data, double n, int tam);
-	double* Mult(double* X, double* Y, int numbits);
+	ZZ powM(ZZ a, ZZ m, ZZ modulo,int NumB);
+	void four(double* data, unsigned long nn);
+	void fourI(double* data, unsigned long nn);
+	double* Mult(double* X, double* Y, unsigned long tam);
+	void MultComple(double *X, double *Xi, double *Y, double *Yi, double* Resp, double* Respi);
+	void ConjuComple(double* Resp, int tam);
+	ZZ MultiFourier(ZZ X, ZZ Y, int NumbitsRSA);
 };
