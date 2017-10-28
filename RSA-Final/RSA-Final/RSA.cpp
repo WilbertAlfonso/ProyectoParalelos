@@ -18,10 +18,10 @@ RSA::RSA(int bits)
     on=(p-1)*(q-1);
     //e=Funciones.generaPrimo(bits);
     e=GenPrime_ZZ(bits);
-    /*do {
+    do {
         e=Funciones.aleatorioBits(bits);
     }
-    while((GCD(e,on))!=1);*/
+    while((GCD(e,on))!=1);
 
 
     d=InvMod(e,on);
